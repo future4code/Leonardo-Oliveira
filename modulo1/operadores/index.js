@@ -48,3 +48,46 @@ console.log(
 console.log(
   "O segundo numero é divisível pelo primeiro? " + (numero02 % numero01 === 0)
 );
+
+// Desafio 01
+
+const grausEmKelvin = (77 - 32) * (5 / 9) + 273.15;
+const grausEmF = 80 * (9 / 5) + 32;
+const grausEmK2 = 30 + 273;
+const grausEmF2 = 30 * (9 / 5) + 32;
+
+console.log(`O resultado de 77ºF para Kelvin é ${grausEmKelvin}`);
+console.log(`O resultado de 80ºC para Fahrenheit é ${grausEmF}`);
+console.log(
+  `O resultado de 30ºC para Fahrenheit e Kelvin, respectivamente é: ${grausEmF2} e ${grausEmK2}`
+);
+
+const grausEmCelcius = Number(prompt("Insira a temperatura em Celsius: "));
+
+const grausEmK3 = grausEmCelcius + 273;
+const grausEmF3 = grausEmCelcius * (9 / 5) + 32;
+
+alert(
+  `O resultado de ${grausEmCelcius}ºC para Fahrenheit e Kelvin, respectivamente é: ${grausEmF3} e ${grausEmK3}`
+);
+
+// Desafio 02
+const valorASerPago = 0.05 * 280;
+
+console.log(
+  `Uma residência que consuma 280 quilowatt/hora deve pagar ao fim do mês:${valorASerPago}`
+);
+
+console.log(
+  `Com o desconto aplicado de 15% ao valor anterior temos: ${
+    valorASerPago - valorASerPago / 0.15
+  }`
+);
+
+// Desafio 03
+console.log(`20lb equivalem a ${20 * 0.45359237}kg`);
+console.log(`10.5oz equivalem a ${10.5 * 0.02835}kg`);
+console.log(`100mi equivalem a ${100 * 1609.34}m`);
+console.log(`50ft equivalem a ${50 / 3.2808}m`);
+console.log(`103.56gal equivalem a ${103.56 * 3.785411784}l`);
+console.log(`450xic equivalem a ${450 * 0.24}l`);
