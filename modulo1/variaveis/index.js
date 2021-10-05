@@ -19,9 +19,9 @@ alert(typeof nome + "\n", typeof idade + "\n");
 alert("Olá " + nome + "," + " você tem " + idade + " anos.");
 
 // Exercicio 02
-let pergunta01 = prompt("Você gosta de matemática?");
-let pergunta02 = prompt("Você bebeu 2L de água hoje?");
-let pergunta03 = prompt("Você gosta de passear ao ar livre?");
+const pergunta01 = prompt("Você gosta de matemática?");
+const pergunta02 = prompt("Você bebeu 2L de água hoje?");
+const pergunta03 = prompt("Você gosta de passear ao ar livre?");
 
 alert("Você gosta de matemática? - " + pergunta01);
 alert("Você bebeu 2L de água hoje?- " + pergunta02);
@@ -48,15 +48,15 @@ let numero02 = prompt("Informe outro número:");
 
 console.log(
   "1. O primeiro número somado ao segundo número resulta em: " +
-    numero01 +
-    numero02
+    Number(numero01) +
+    Number(numero02)
 );
 console.log(
   "2. O primeiro número multiplicado pelo segundo número resulta em: " +
     numero01 * numero02
 );
 
-// R: A soma está incorreta, porque os números digitados pelo usuário na verdade
+// R: A soma fica incorreta sem a conversão direta, porque os números digitados pelo usuário na verdade
 // são strings para o javascript (a primeira vista), então quando se usa o símbolo de "+"
 // o javascript entende que estamos concatenando duas strings (unindo) e não somando dois números
 // já na multiplicação, a lingaguem entende que estamos fazendo uma operação matemática e as strings
