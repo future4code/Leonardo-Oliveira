@@ -80,7 +80,7 @@ console.log(
 
 console.log(
   `Com o desconto aplicado de 15% ao valor anterior temos: ${
-    valorASerPago - valorASerPago / 0.15
+    valorASerPago - valorASerPago * 0.15
   }`
 );
 
