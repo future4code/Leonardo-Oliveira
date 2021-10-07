@@ -122,7 +122,8 @@ somaSemRetorno(num01, num02);
 // Desafio 02
 
 const teoremaPitagoras = (cateto1, cateto2) => {
-  const hipotenusa = Math.sqrt(cateto1 ** 2 + cateto2 ** 2);
+  const catetos = cateto1 * cateto1 + cateto2 * cateto2;
+  const hipotenusa = catetos ** (1 / 2);
   return hipotenusa;
 };
 
