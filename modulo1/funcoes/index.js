@@ -1,3 +1,27 @@
+/**
+ * function minhaFuncao(variavel) {
+	return variavel * 5
+  }
+
+  console.log(minhaFuncao(2))
+  console.log(minhaFuncao(10))
+ * => vai ser impresso: 10 e 50, respecticamente, pois estamos multiplicando
+ * 
+ * let textoDoUsuario = prompt("Insira um texto");
+
+  const outraFuncao = function(texto) {
+    return texto.toLowerCase().includes("cenoura")
+  }
+
+  const resposta = outraFuncao(textoDoUsuario)
+  console.log(resposta)
+ * => a - A função transforma todas as palavras do texto em minusculas e verifica se existe
+  a palavra cenouro no texto, caso exista, retorna true
+  => b.1 - true
+     b.2 - true
+     b.3 - false
+ */
+
 //Exercicio 01
 function breveAutoIntroducao() {
   return "Eu sou o Leo, tenho 24 anos, moro em Santana e sou estudante.";
