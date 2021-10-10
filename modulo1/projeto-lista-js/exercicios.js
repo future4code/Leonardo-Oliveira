@@ -101,14 +101,47 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
 }
 
 // EXERCÍCIO 13
-function checaRenovacaoRG() {}
+function checaRenovacaoRG() {
+  const anoAtual = Number(prompt("Digite o ano atual: "));
+  const anoDeNasc = Number(prompt("Digite o seu ano de nascimento: "));
+  const anoEmissaoRG = Number(
+    prompt("Digite o ano que foi emitido a certeira RG:")
+  );
+
+  const result1 = anoAtual - anoDeNasc <= 20 && anoAtual - anoEmissaoRG >= 5;
+  const result2 =
+    anoAtual - anoDeNasc > 20 &&
+    anoAtual - anoDeNasc <= 50 &&
+    anoAtual - anoEmissaoRG >= 10;
+  const result3 = anoAtual - anoDeNasc > 50 && anoAtual - anoEmissaoRG >= 15;
+
+  console.log(result1 || result2 || result3);
+}
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
-  // implemente sua lógica aqui
+  const anoMultiplos400 = ano % 400 === 0;
+  const anoMultiplosDe4 = ano % 4 === 0;
+  const anoExceto100e4 = ano % 100 !== 0;
+
+  return anoMultiplos400 || (anoMultiplosDe4 && anoExceto100e4);
 }
 
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
-  // implemente sua lógica aqui
+  const temMaisDe18 = prompt("Você tem mais de 18 anos? [sim] ou [não]");
+  const enisnoMedioCompleto = prompt(
+    "Você tem o ensino médio completo? [sim] ou [não]"
+  );
+  const disponibilidadeExclusiva = prompt(
+    "Você possui disponibilidade exclusiva durante os horários do curso? [sim] ou [não]"
+  );
+
+  console.log(
+    temMaisDe18 === "sim" &&
+      enisnoMedioCompleto === "sim" &&
+      disponibilidadeExclusiva === "sim"
+  );
 }
+
+checaValidadeInscricaoLabenu();
