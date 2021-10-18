@@ -88,7 +88,21 @@ function retornaObjetoEntreDoisNumeros(num1, num2) {
 }
 
 // EXERCÍCIO 08
-function retornaNPrimeirosPares(n) {}
+function retornaNPrimeirosPares(n) {
+  const arrayPrimeirosPares = [];
+  let qndNumPares = 0;
+  let numeroCorrente = 0;
+
+  while (qndNumPares !== n) {
+    if (numeroCorrente % 2 === 0) {
+      arrayPrimeirosPares.push(numeroCorrente);
+      qndNumPares++;
+    }
+    numeroCorrente++;
+  }
+
+  return arrayPrimeirosPares;
+}
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {}
@@ -116,3 +130,5 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {}
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {}
+
+console.log(retornaNPrimeirosPares(3));
