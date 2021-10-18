@@ -120,7 +120,62 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
 }
 
 // EXERCÍCIO 10
-function retornaSegundoMaiorESegundoMenor(array) {}
+function retornaSegundoMaiorESegundoMenor(array) {
+  function retornaArrayMaiorEMenor(array) {
+    let i = 0;
+    let maiorNum = array[0];
+    let menorNum = array[0];
+
+    if (array.length === 2 && array[i] !== array[i + 1]) {
+      if (array[i] > array[i + 1]) {
+        maiorNum = array[i];
+        menorNum = array[i + 1];
+      } else {
+        maiorNum = array[i + 1];
+        menorNum = array[i];
+      }
+    }
+
+    while (i < array.length) {
+      if (array[i + 1] !== undefined) {
+        if (array[i + 1] > maiorNum) {
+          maiorNum = array[i + 1];
+        }
+        if (array[i + 1] < menorNum) {
+          menorNum = array[i + 1];
+        }
+      }
+      i++;
+    }
+    return { array, maiorNum, menorNum };
+  }
+
+  const infoPrimeiroMaiorEMenor = retornaArrayMaiorEMenor(array);
+
+  const primeiroMaiorNum = infoPrimeiroMaiorEMenor.maiorNum;
+  const primeiroMenorNum = infoPrimeiroMaiorEMenor.menorNum;
+  const primeiroArray = infoPrimeiroMaiorEMenor.array;
+
+  console.log(primeiroArray);
+
+  if (primeiroArray.length === 2) {
+    if (infoPrimeiroMaiorEMenor.maiorNum === infoPrimeiroMaiorEMenor.menorNum) {
+      return [
+        infoPrimeiroMaiorEMenor.maiorNum,
+        infoPrimeiroMaiorEMenor.menorNum,
+      ];
+    }
+  } else {
+    return [infoPrimeiroMaiorEMenor.maiorNum, infoPrimeiroMaiorEMenor.menorNum];
+  }
+
+  primeiroArray.splice(primeiroArray.indexOf(primeiroMaiorNum));
+  primeiroArray.splice(primeiroArray.indexOf(primeiroMenorNum));
+
+  const infoSegundoMaiorEMenor = retornaArrayMaiorEMenor(primeiroArray);
+
+  return [infoSegundoMaiorEMenor.maiorNum, infoSegundoMaiorEMenor.menorNum];
+}
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {}
