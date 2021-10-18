@@ -33,7 +33,16 @@ function retornaNumerosPares(array) {
 }
 
 // EXERCÍCIO 05
-function retornaNumerosParesElevadosADois(array) {}
+function retornaNumerosParesElevadosADois(array) {
+  const paresElevadoAoQuad = [];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 === 0) {
+      paresElevadoAoQuad.push(array[i] * array[i]);
+    }
+  }
+  return paresElevadoAoQuad;
+}
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {}
