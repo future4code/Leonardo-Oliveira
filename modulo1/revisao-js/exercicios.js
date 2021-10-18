@@ -130,5 +130,3 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {}
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {}
-
-console.log(retornaNPrimeirosPares(3));
