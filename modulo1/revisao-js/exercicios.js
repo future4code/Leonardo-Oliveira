@@ -93,7 +93,7 @@ function retornaNPrimeirosPares(n) {
   let qndNumPares = 0;
   let numeroCorrente = 0;
 
-  while (qndNumPares !== n) {
+  while (qndNumPares !== Number(n)) {
     if (numeroCorrente % 2 === 0) {
       arrayPrimeirosPares.push(numeroCorrente);
       qndNumPares++;
