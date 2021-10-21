@@ -123,6 +123,10 @@ td img {
   height: 100px;
 }
 
+#barra-busca input {
+  border-width: 0px 0px 3px 0px;
+}
+
 button:hover {
   background-color: #ff9200;
 }
@@ -138,6 +142,11 @@ button:active {
   border-radius: 5px;
   font-size: 10px;
   color: black;
+}
+
+.link-voltar {
+  text-align: center;
+  padding: 10px;
 }
 
 #back-button:hover {
