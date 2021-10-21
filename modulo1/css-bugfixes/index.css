@@ -84,10 +84,9 @@ div img {
   font-size: 60px;
 }
 
-#p-home {
-  display: block;
-  margin-top: 1em;
-  margin-bottom: 1em;
+.p-home {
+  padding: 10px;
+  text-align: center;
 }
 
 /**
