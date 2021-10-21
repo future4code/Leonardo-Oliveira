@@ -123,6 +123,13 @@ td img {
   height: 100px;
 }
 
+button:hover {
+  background-color: #ff9200;
+}
+button:active {
+  color: #fff;
+}
+
 #back-button {
   background-color: white;
   width: 100px;
