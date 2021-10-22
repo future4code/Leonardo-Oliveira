@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+li,
+a,
+button {
+  font-weight: 500;
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+body {
+  background-image: url(img/cake.jpg);
+}
+
+img {
+  max-width: 200px;
+  max-height: 150px;
+  width: auto;
+  height: auto;
+}
+
+.links_nav {
+  list-style: none;
+}
+
+.links_nav li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.links_nav li a {
+  transition: all 0.3s ease 0s;
+}
+.links_nav li a:hover {
+  color: brown;
+}
+
+button {
+  padding: 9px 25px;
+  background-color: rgba(0, 136, 169, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0, 3s ease 0s;
+}
+
+button:hover {
+  background-color: rgba(0, 136, 169, 0.8);
+}
+
+#footerlist li {
+  display: inline;
+  list-style-type: none;
+  padding-right: 30px;
+}
