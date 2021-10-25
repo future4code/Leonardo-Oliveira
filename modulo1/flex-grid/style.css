@@ -37,3 +37,18 @@ main {
 img {
   height: 20px;
 }
+
+footer {
+  height: 70px;
+  background-color: mediumvioletred;
+  padding-top: 10px;
+  text-align: center;
+}
+
+#menu {
+  background-color: #f2d0e0;
+  width: 300px;
+}
+section {
+  flex-grow: 1;
+}
