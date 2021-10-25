@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  background: #f2d0e0;
+  height: 100vh;
+  justify-content: space-between;
+}
