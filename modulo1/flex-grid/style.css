@@ -10,3 +10,14 @@
   height: 100vh;
   justify-content: space-between;
 }
+
+.header {
+  background: mediumvioletred;
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  align-items: center;
+  padding: 0 10px;
+  font-weight: bolder;
+  font-size: 20px;
+}
