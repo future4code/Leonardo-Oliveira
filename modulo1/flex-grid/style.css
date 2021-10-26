@@ -60,16 +60,21 @@ footer {
 }
 
 section {
+  padding-top: 20px;
   flex-grow: 1;
 }
 
-.flex {
-  display: flex;
-  flex-wrap: wrap;
+.div-bolo {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   max-width: 800px;
   margin: 0 auto;
-}
-.flex > div {
-  flex: 1 1 200px;
-  margin: 10px;
+  grid-gap: 20px;
+  padding-bottom: 10px;
 }
