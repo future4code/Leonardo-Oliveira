@@ -34,7 +34,16 @@ main {
   border: 1px solid black;
 }
 
-img {
+.bolo {
+  max-width: 100%;
+  display: block;
+}
+
+.arrow-icon {
+  height: 20px;
+}
+
+.icon-img {
   height: 20px;
 }
 
@@ -49,6 +58,17 @@ footer {
   background-color: #f2d0e0;
   width: 300px;
 }
+
 section {
   flex-grow: 1;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.flex > div {
+  flex: 1 1 200px;
 }
