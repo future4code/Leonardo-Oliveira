@@ -38,3 +38,12 @@ main {
   font-weight: 600;
   box-shadow: 2px 2px 2px #1e56a0;
 }
+
+video {
+  width: 100%;
+}
+
+header,
+footer {
+  background-color: #dd105e;
+}
