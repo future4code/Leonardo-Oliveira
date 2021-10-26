@@ -47,3 +47,9 @@ header,
 footer {
   background-color: #dd105e;
 }
+
+footer {
+  text-align: center;
+  flex-grow: 0;
+  height: 45px;
+}
