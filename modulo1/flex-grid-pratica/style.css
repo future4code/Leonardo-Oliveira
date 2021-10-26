@@ -23,3 +23,18 @@ header {
   align-items: center;
   justify-content: space-around;
 }
+
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.card-item {
+  margin: 10%;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 2px 2px 2px #1e56a0;
+}
