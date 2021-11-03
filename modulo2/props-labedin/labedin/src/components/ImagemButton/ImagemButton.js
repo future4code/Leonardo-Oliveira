@@ -1,14 +1,13 @@
-import React from 'react';
-import './ImagemButton.css'
+import React from "react";
+import { ImageButtonContainer } from "./ImagemButtonContainer";
 
 function ImagemButton(props) {
-    return (
-        <div className="image-button-container">
-            <img src={ props.imagem }/>
-            <p>{ props.texto }</p>
-        </div>
-
-    )
+  return (
+    <ImageButtonContainer>
+      <img src={props.imagem} />
+      <p>{props.texto}</p>
+    </ImageButtonContainer>
+  );
 }
 
 export default ImagemButton;

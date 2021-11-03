@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import { AppContainer } from "./AppContainer";
 import CardGrande from "./components/CardGrande/CardGrande";
 import CardPequeno from "./components/CardPequeno/CardPequeno";
 import ImagemButton from "./components/ImagemButton/ImagemButton";
@@ -9,7 +9,7 @@ import msbLogo from "./img/msb_logo.jpeg";
 function App() {
   const nome = "Leonardo Oliveira";
   return (
-    <div className="App">
+    <AppContainer>
       <div className="page-section-container">
         <h2>Dados pessoais</h2>
         <CardGrande
@@ -62,7 +62,7 @@ function App() {
           texto="Twitter"
         />
       </div>
-    </div>
+    </AppContainer>
   );
 }
 
