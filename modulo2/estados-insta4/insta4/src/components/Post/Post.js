@@ -42,24 +42,19 @@ const PostPhoto = styled.img`
 `;
 
 class Post extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      curtido: false,
-      numeroCurtidas: 0,
-      comentando: false,
-      numeroComentarios: 0,
-      comentario: "",
-    };
+  state = {
+    curtido: false,
+    numeroCurtidas: 0,
+    comentando: false,
+    numeroComentarios: 0,
+    comentario: "",
+  };
 
-    this.onChangeComentario = this.onChangeComentario.bind(this);
-  }
-
-  onChangeComentario(event) {
+  onChangeComentario = (event) => {
     this.setState({
       comentario: event.target.value,
     });
-  }
+  };
 
   onClickCurtida = () => {
     if (this.state.curtido) {
