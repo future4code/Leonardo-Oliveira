@@ -23,7 +23,18 @@ export default class App extends Component {
 
   addItem = (event) => {
     event.prevent.default();
-    const newItem = this.state.currentItem;
+    const newItens = this.state.currentItem;
+
+    if (newItens.text !== "") {
+      const itens = [...this.state.items, newItens];
+      this.setState({
+        items: itens,
+        currentItem: {
+          text: "",
+          key: "",
+        },
+      });
+    }
   };
 
   render() {
