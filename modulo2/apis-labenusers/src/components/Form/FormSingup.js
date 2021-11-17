@@ -10,6 +10,7 @@ const FormSingup = () => {
             Username
           </label>
           <input
+            id="username"
             type="text"
             name="username"
             className="form-input"
@@ -21,12 +22,14 @@ const FormSingup = () => {
             Email
           </label>
           <input
+            id="email"
             type="text"
             name="email"
             className="form-input"
             placeholder="Insira o seu email"
           />
         </div>
+        <button className="form0input-btn">Sing up</button>
       </form>
     </div>
   );
