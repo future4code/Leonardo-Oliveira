@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@fortawesome/react-fontawesome": "^0.1.16"
+    "@fortawesome/react-fontawesome": "^0.1.16",
+    "styled-components": "^5.3.3"
   }
 }
