@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from "axios";
 
-function PokeCard({pokemon}) {
-  console.log(pokemon)
+const  PokeCard = ({pokemon}) => {
   const [individualPokemon, setIndividualPokemon] = useState({name:'', weight: 0, types:[
     {slot:0, type:{name:'', url:''}}
   ], sprites:{front_default:''}});
@@ -11,7 +10,8 @@ function PokeCard({pokemon}) {
     try {
       const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${namePokemon}`);
       const pokemonItem = await response.data;
-      console.log(pokemonItem);
+      console.log(pokemonItem)
+      console.log('Renderizou!')
       setIndividualPokemon(pokemonItem);
     } catch (error) {
       console.log(error)
@@ -20,7 +20,7 @@ function PokeCard({pokemon}) {
 
   useEffect(() => {
     getPokemon(pokemon);
-  }, [pokemon, individualPokemon])
+  }, [pokemon])
 
   return (
     <div>

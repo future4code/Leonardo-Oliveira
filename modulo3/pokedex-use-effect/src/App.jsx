@@ -4,15 +4,18 @@ import PokeCard from "./components/PokeCard/PokeCard";
 import { AppContainer } from "./App.styled";
 
 
-function App() {
+const App = () => {
   const [pokemons, setPokemons] = useState([]);
   const [pokeName, setPokeName] = useState('');
   
+    // O UseEffect saberá qual será o "estado" que vai ser mudado
+    // baseado no que está dentro da função ou das funções internas,
+    // OLHANDO para o setState daquela função.
+    
     const getAllPokemons = async () => {
       try {
         const response = await axios.get("https://pokeapi.co/api/v2/pokemon/?limit=151");
         const pokemons = await response.data.results;
-        console.log(pokemons);
         setPokemons(pokemons);
 
       } catch (error) {
