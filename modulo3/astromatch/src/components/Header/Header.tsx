@@ -3,7 +3,7 @@ import React from 'react';
 export const Header: React.FC = () => {
   return (
     <header>
-      <h1>aaaa</h1>
+      <h1>Astromatch</h1>
     </header>
   );
 };
