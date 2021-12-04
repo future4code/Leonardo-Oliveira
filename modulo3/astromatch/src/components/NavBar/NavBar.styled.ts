@@ -17,4 +17,12 @@ export const NavBarContainer = styled.nav`
   & i:nth-child(1) {
     color: #3498db;
   }
+
+  /* Desktop View */
+  @media (min-width: 1025px) {
+    & {
+      width: 400px;
+      margin: auto;
+    }
+  }
 `;
