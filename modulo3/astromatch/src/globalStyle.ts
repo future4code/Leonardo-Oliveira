@@ -14,6 +14,21 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     font-family: 'Roboto', sans-serif;
   }
+
+  /* Desktop View */
+  @media(min-width: 1025px){
+    .photo{
+      width: 367px;
+      height: 684px;
+    }
+
+    &{
+      width: 400px;
+      margin: auto;
+    }
+
+  }
+
 `;
 
 export default GlobalStyle;
