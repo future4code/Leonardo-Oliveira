@@ -19,3 +19,13 @@ export interface IViagemContextType {
   viagens: IViagemDTO[];
   setViagens: (viagens: IViagemDTO[]) => void;
 }
+
+export interface IFormValues {
+  email: string;
+  password: string;
+}
+
+export interface IAuthDTO {
+  success: boolean;
+  token: string;
+}

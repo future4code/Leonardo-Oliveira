@@ -17,7 +17,7 @@ const Header = function (): JSX.Element {
           <Link className="links" to="/viagem">
             Ver Viagens
           </Link>
-          <Link className="links" to="/admin">
+          <Link className="links" to="/login-admin">
             Área do Admin
           </Link>
         </ul>
