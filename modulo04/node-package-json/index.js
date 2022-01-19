@@ -30,3 +30,38 @@ console.log(msg7yearsAhead);
 
 // Exercicio 02
 
+function CheckMathOperation(operation, value1, value2) {
+  switch (operation) {
+    case "+":
+      return value1 + value2;
+    case "-":
+      return value1 - value2;
+    case "*":
+      return value1 * value2;
+    case "/":
+      return value1 / value2;
+    default:
+      return "Invalid math operation!";
+  }
+}
+
+
+const result = CheckMathOperation("*", 5, 20);
+
+console.log(result);
+
+// Exercicio 03
+
+const tasks = [];
+
+function AddTask(task, arrTasks) {
+  arrTasks.push(task);
+}
+
+
+AddTask("Make breakfast!", tasks);
+AddTask("Study programming", tasks);
+AddTask("Workout 8:30 at morning", tasks);
+AddTask("Read some pages of a book", tasks);
+
+console.log(tasks);
