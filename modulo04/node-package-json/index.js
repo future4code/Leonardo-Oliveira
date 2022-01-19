@@ -5,6 +5,10 @@ passados na linha de comando para o Node?
 Resposta: Utilizando o comando npm run <nome_comando> 
 */
 
+import { Msg } from "./exercicio01/exercicio01.js";
+import { Msg7yearsAhead, CheckMathOperation as CheckMathOperation2 } from "./exercicio02/exercicio02.js";
+import Tasks from "./exercicio03/exercicio03.js";
+
 
 /* Crie um programa que receba seu nome e sua idade. 
 Após receber estes valores, imprima no console uma mensagem 
@@ -65,3 +69,10 @@ AddTask("Workout 8:30 at morning", tasks);
 AddTask("Read some pages of a book", tasks);
 
 console.log(tasks);
+
+// Exercicio 04
+
+console.log(Msg);
+console.log(Msg7yearsAhead);
+console.log(CheckMathOperation2("+", 20, 6));
+console.log(Tasks);
