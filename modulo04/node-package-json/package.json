@@ -1,0 +1,21 @@
+{
+  "name": "package-json",
+  "version": "1.0.0",
+  "description": "Exercicio teste",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index.js"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/future4code/Leonardo-Oliveira.git"
+  },
+  "author": "Leonardo Olivera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/future4code/Leonardo-Oliveira/issues"
+  },
+  "homepage": "https://github.com/future4code/Leonardo-Oliveira#readme"
+}
