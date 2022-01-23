@@ -4,6 +4,7 @@ import { ExibeFilme, GENERO } from "./exercicio3/exercicio3";
 import { colaboradores, ExibeColaboradorSetor, SETOR } from "./exercicio4/exercicio4";
 import { ExibeUsuarioRole, usuarios } from "./exercicio5/exercicio5";
 import { clientes, ExibeClientesNegativo } from "./exercicio6/exercicio6";
+import { produtos, TransformaValorProduto } from "./exercicio7/exercicio7";
 
 
 console.log(ExibeMensagemFormatada("Leonardo", "15/10/1996"));
@@ -19,3 +20,5 @@ console.log(ExibeColaboradorSetor(colaboradores, SETOR.MARKETING));
 console.log(ExibeUsuarioRole(usuarios, "admin"));
 
 console.log(ExibeClientesNegativo(clientes));
+
+console.log(TransformaValorProduto(produtos));
