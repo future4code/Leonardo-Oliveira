@@ -40,3 +40,4 @@ console.log(CalculaFatorial('Escola'));
 console.log();
 
 // 11
+console.log();

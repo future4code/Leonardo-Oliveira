@@ -1,4 +1,4 @@
-type Produto ={
+type Produto = {
   nome:string;
   quantidade:number;
   valorUnitario:number | string;
@@ -20,10 +20,12 @@ export const produtos : Produto[] = [
 ]
 
 
-export const TransformaValorProduto = (arrProdutos : Produto[]) => {
-  const novoArrProd =  arrProdutos.map((produto: Produto) => {
+export const TransformaValorProduto = (arrProdutos : Produto[]): Produto[] => {
+  const novoArrProd: Produto[] =  arrProdutos.map((produto: Produto) => {
     if(typeof (produto.valorUnitario) === 'number'){
       return {...produto, valorUnitario: ajustaPreco(produto.valorUnitario)};
+    } else {
+      return {...produto};
     }
   })
   return novoArrProd;

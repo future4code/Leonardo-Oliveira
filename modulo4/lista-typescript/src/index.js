@@ -28,3 +28,7 @@ console.log((0, exercicio7_1.TransformaValorProduto)(exercicio7_1.produtos));
 console.log((0, exercicio8_1.VerificaCarteiraRenovacao)("15/10/1996", "04/08/2018"));
 // 09
 console.log((0, exercicio9_1.CalculaFatorial)('Escola'));
+// 10
+console.log();
+// 11
+console.log();

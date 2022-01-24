@@ -30,6 +30,9 @@ var TransformaValorProduto = function (arrProdutos) {
         if (typeof (produto.valorUnitario) === 'number') {
             return __assign(__assign({}, produto), { valorUnitario: ajustaPreco(produto.valorUnitario) });
         }
+        else {
+            return __assign({}, produto);
+        }
     });
     return novoArrProd;
 };
