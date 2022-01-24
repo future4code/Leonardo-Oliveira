@@ -3,5 +3,17 @@
     {
       "text": "Hello from express"
     }
+  ],
+  "users": [
+    {
+      "id": 1, "name":"Leonardo Oliveira", "phone":"(96) 99130-0650", "email":"leozartino@gmail.com","website":"www.leozartino.com.br"
+    },
+    {
+      "id": 2, "name":"Andre Hoest", "phone":"(21) 44405258", "email":"andre@gmail.com","website":"www.andre.com.no"
+    },
+    {
+      "id": 3, "name":"Maria Silva", "phone":"(91) 3254568", "email":"maria@gmail.com","website":"www.maria.com"
+    }
+
   ]
 }
