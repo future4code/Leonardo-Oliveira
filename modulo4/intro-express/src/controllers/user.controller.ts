@@ -1,11 +1,11 @@
-import { createHello, indexHello } from "../services/hello.service";
+import { createUser, indexUsers } from "../services/user.service";
 
 import { NextFunction, Response, Request } from "express"
 
-export const postHello = async (req: Request, res: Response, next: NextFunction) => {
-  const { content } = req.body;
+export const postUser = async (req: Request, res: Response, next: NextFunction) => {
+  const { id, name, phone, email, website } = req.body;
   try {
-    await createHello(content)
+    await createUser(id, name, phone, email, website)
     res.sendStatus(201)
     next()
   } catch(e) {
@@ -15,9 +15,9 @@ export const postHello = async (req: Request, res: Response, next: NextFunction)
   }
 }
 
-export const getAllHellos = async (_: Request, res: Response, next: NextFunction) => {
+export const getAllUsers = async (_: Request, res: Response, next: NextFunction) => {
   try {
-    await indexHello();
+    await indexUsers();
     res.sendStatus(200)
     next()
   } catch(e) {
