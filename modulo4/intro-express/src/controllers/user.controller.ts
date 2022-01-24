@@ -4,8 +4,9 @@ import { NextFunction, Response, Request } from "express"
 
 export const postUser = async (req: Request, res: Response, next: NextFunction) => {
   const { id, name, phone, email, website } = req.body;
+  const userDTO = {id, name, phone, email, website};
   try {
-    await createUser(id, name, phone, email, website)
+    await createUser(userDTO);
     res.sendStatus(201)
     next()
   } catch(e) {

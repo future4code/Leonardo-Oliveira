@@ -3,8 +3,8 @@ import  db  from '../db/db.json';
 
 export const createHello = (content: string) => {
   try {
-
-    const newMessage = db.messages.push({"text":content});
+    db.messages.push({"text": content});
+    const newMessage = db.messages[db.messages.length - 1];
     return  newMessage;
   } catch(e) {
     const result = (e as Error).message;

@@ -1,16 +1,12 @@
 
 import  db  from '../db/db.json';
+import { User } from '../types/user';
 
-export const createUser = (
-    id: number,
-    name: string,
-    phone: string,
-    email: string,
-    website: string
-    ) => {
+export const createUser = (user: User) => {
   try {
-
-    const newUser = db.users.push({ id, name, phone, email, website });
+    const {id, name, phone, email, website} = user;
+    db.users.push({ id, name, phone, email, website });  
+    const newUser: User = db.users[db.users.length - 1];
     return  newUser;
   } catch(e) {
     const result = (e as Error).message;
