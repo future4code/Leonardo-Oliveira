@@ -8,6 +8,7 @@ var exercicio5_1 = require("./exercicio5/exercicio5");
 var exercicio6_1 = require("./exercicio6/exercicio6");
 var exercicio7_1 = require("./exercicio7/exercicio7");
 var exercicio8_1 = require("./exercicio8/exercicio8");
+var exercicio9_1 = require("./exercicio9/exercicio9");
 // 01
 console.log((0, exercicio1_1["default"])("Leonardo", "15/10/1996"));
 // 02
@@ -25,3 +26,5 @@ console.log((0, exercicio6_1.ExibeClientesNegativo)(exercicio6_1.clientes));
 console.log((0, exercicio7_1.TransformaValorProduto)(exercicio7_1.produtos));
 // 08
 console.log((0, exercicio8_1.VerificaCarteiraRenovacao)("15/10/1996", "04/08/2018"));
+// 09
+console.log((0, exercicio9_1.CalculaFatorial)('Escola'));

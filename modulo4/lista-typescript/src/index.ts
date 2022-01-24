@@ -6,6 +6,7 @@ import { ExibeUsuarioRole, usuarios } from "./exercicio5/exercicio5";
 import { clientes, ExibeClientesNegativo } from "./exercicio6/exercicio6";
 import { produtos, TransformaValorProduto } from "./exercicio7/exercicio7";
 import { VerificaCarteiraRenovacao } from "./exercicio8/exercicio8";
+import { CalculaFatorial } from "./exercicio9/exercicio9";
 
 // 01
 console.log(ExibeMensagemFormatada("Leonardo", "15/10/1996"));
@@ -31,3 +32,11 @@ console.log(TransformaValorProduto(produtos));
 
 // 08
 console.log(VerificaCarteiraRenovacao("15/10/1996", "04/08/2018"));
+
+// 09
+console.log(CalculaFatorial('Escola'));
+
+// 10
+console.log();
+
+// 11
