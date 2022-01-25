@@ -1,10 +1,11 @@
 import { createUser, indexUsers } from "../services/user.service";
 
 import { NextFunction, Response, Request } from "express"
+import { User } from "../types/user";
 
 export const postUser = async (req: Request, res: Response, next: NextFunction) => {
   const { id, name, phone, email, website } = req.body;
-  const userDTO = {id, name, phone, email, website};
+  const userDTO: User = {id, name, phone, email, website};
   try {
     await createUser(userDTO);
     res.sendStatus(201)
