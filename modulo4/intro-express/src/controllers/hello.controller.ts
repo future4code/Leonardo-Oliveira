@@ -17,8 +17,7 @@ export const postHello = async (req: Request, res: Response, next: NextFunction)
 
 export const getAllHellos = async (_: Request, res: Response, next: NextFunction) => {
   try {
-    await indexHello();
-    res.sendStatus(200)
+    res.json(indexHello()).status(200);
     next()
   } catch(e) {
     const result = (e as Error).message;

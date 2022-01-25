@@ -19,8 +19,7 @@ export const postUser = async (req: Request, res: Response, next: NextFunction) 
 
 export const getAllUsers = async (_: Request, res: Response, next: NextFunction) => {
   try {
-    await indexUsers();
-    res.sendStatus(200)
+    res.json(indexUsers()).status(200);
     next()
   } catch(e) {
     const result = (e as Error).message;
