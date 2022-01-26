@@ -1,7 +1,7 @@
 import express from "express";
 
 import { AddressInfo } from "net";
-import routes from "./src/routes/routes";
+import routes from "./routes/routes";
 
 const app = express();
 

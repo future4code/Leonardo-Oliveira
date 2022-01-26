@@ -19,8 +19,9 @@ routes.get('/ping', async (_: Request, response: Response, next: NextFunction): 
 
 routes.get('/todos', async (request: Request, response: Response, next: NextFunction): Promise<void> => {
   try {
-    const {userId, completed} = request.params;
-
+    const {userId, completed} = request.query;
+    
+    // Precisa adicionar validação caso passe id que nao existe
     if(userId && completed){
       let statusTask: boolean;
 
@@ -46,10 +47,12 @@ routes.get('/todos', async (request: Request, response: Response, next: NextFunc
 
 routes.post('/todos', async (request: Request, response: Response, next: NextFunction): Promise<void> => {
   try {
-    const {userId, id, title} = request.body;
+    const {userID, idTask, title} = request.body;
 
-    if(userId && id && title){
+    if(userID && idTask && title){
       let completed: boolean = false;
+      const userId: number = Number(userID);
+      const id: number = Number(idTask);
 
       const newTodo: Todo = {userId, id, title, completed};
 
