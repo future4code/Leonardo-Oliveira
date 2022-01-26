@@ -1,4 +1,7 @@
 import express, {Request, Response, NextFunction} from 'express';
+import { Todo } from '../types/todo';
+import storage from '../storage.json';
+
 
 const routes = express.Router();
 
@@ -12,6 +15,35 @@ routes.get('/ping', async (_: Request, response: Response, next: NextFunction): 
     response.sendStatus(500) && next(result);
   }
 })
+
+
+routes.get('/todos', async (request: Request, response: Response, next: NextFunction): Promise<void> => {
+  try {
+    const {id, completed} = request.params;
+
+    if(id && completed){
+      let statusTask: boolean;
+
+      completed === "true" ? statusTask = true : statusTask = false; 
+      
+      const todosUserStatus: Todo[] = storage.todos.filter((todo: Todo) => {
+        return (todo.id === Number(id) && todo.completed === statusTask);
+      });
+  
+      response.send(todosUserStatus).status(200);
+      next();
+    } else {
+      response.sendStatus(500) && next("ID or status not passed!");
+    }
+
+
+  } catch (error) {
+    const result = (error as Error).message;
+    console.log(result);
+    response.sendStatus(500) && next(result);
+  }
+})
+
 
 
 
