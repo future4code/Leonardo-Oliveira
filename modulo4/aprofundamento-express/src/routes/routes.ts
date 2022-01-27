@@ -52,7 +52,7 @@ routes.get('/todos', async (request: Request, response: Response, next: NextFunc
 });
 
 
-routes.get('/todos/:id', async (request: Request, response: Response, next: NextFunction) => {
+routes.get('/todo/:id', async (request: Request, response: Response, next: NextFunction) => {
   try {
     const { id } = request.params;
     
@@ -85,7 +85,7 @@ routes.get('/todos/:id', async (request: Request, response: Response, next: Next
 });
 
 
-routes.post('/todos', async (request: Request, response: Response, next: NextFunction): Promise<void> => {
+routes.post('/todo', async (request: Request, response: Response, next: NextFunction): Promise<void> => {
   try {
     const {userID, idTask, title} = request.body;
 
@@ -112,7 +112,7 @@ routes.post('/todos', async (request: Request, response: Response, next: NextFun
 });
 
 
-routes.patch('/todos/:idTask', async (request: Request, response: Response, next: NextFunction): Promise<void> => {
+routes.patch('/todo/:idTask', async (request: Request, response: Response, next: NextFunction): Promise<void> => {
   try {
     const { idTask } = request.params;
 
@@ -129,7 +129,7 @@ routes.patch('/todos/:idTask', async (request: Request, response: Response, next
 
       storage.todos[todoIndex].completed = !(storage.todos[todoIndex].completed); 
       
-      response.send(storage.todos).status(200);
+      response.send(storage.todos[todoIndex]).status(200);
       next();
     } else {
       response.sendStatus(400) && next("idTask not passed!");
