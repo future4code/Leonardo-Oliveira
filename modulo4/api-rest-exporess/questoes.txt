@@ -1,0 +1,91 @@
+let users = [
+    {
+        id: 1,
+        name: "Alice",
+        email: "alice@email.com",
+        type: "ADMIN",
+        age: 12
+    },
+    {
+        id: 2,
+        name: "Bob",
+        email: "bob@email.com",
+        type: "NORMAL",
+        age: 36
+    },
+    {
+        id: 3,
+        name: "Coragem",
+        email: "coragem@email.com",
+        type: "NORMAL",
+        age: 21
+    },
+    {
+        id: 4,
+        name: "Dory",
+        email: "dory@email.com",
+        type: "NORMAL",
+        age: 17
+    },
+    {
+        id: 5,
+        name: "Elsa",
+        email: "elsa@email.com",
+        type: "ADMIN",
+        age: 17
+    },
+    {
+        id: 6,
+        name: "Fred",
+        email: "fred@email.com",
+        type: "ADMIN",
+        age: 60
+    }
+]
+
+
+
+a. Qual método HTTP você deve utilizar para isso?
+R: Utilizaria um método GET para retornar todos os usuários cadastrados.
+
+b. Como você indicaria a entidade que está sendo manipulada?
+R: GET api.com/users
+
+**Agora, vamos criar um novo endpoint, que busque todos os usuários 
+que tenham uma propriedade type específica, 
+recebendo apenas um type por vez. Após isso, responda:
+
+c. Como você indicaria a entidade que está sendo manipulada?
+R: GET api.com/users?type=example
+
+d. Você consegue pensar em um jeito de garantir 
+que apenas types válidos sejam utilizados?
+R: Criando um ENUM para cada type e fazendo uma validação posterior no service,
+verificando se o type do ENUM corresponde ao type informado no query do endpoint,
+além de tipar internamente o type/role em user Type.
+
+***Vamos agora praticar o uso de buscas mais variáveis. 
+Faça agora um endpoint de busca que encontre um usuário buscando por nome.
+
+e. Qual é o tipo de envio de parâmetro que costuma ser utilizado por aqui?
+R: GET api.com/users/:nome Eu utilizaria um params para buscar o valor do nome
+de um usuário.
+
+f. Altere este endpoint para que ele devolva uma mensagem de erro 
+caso nenhum usuário tenha sido encontrado.
+R: Throw new Error("Nenhum usuário encontrado") status 404 NOT FOUND.
+
+****Fizemos algumas buscas no nosso conjunto de itens, agora é hora de adicionar 
+coisas. Comecemos criando um usuário na nossa lista. 
+Crie um endpoint que use o método POST para adicionar
+um item ao nosso conjunto de usuários.
+
+g. Mude o método do endpoint para `PUT`. O que mudou?
+R: Não mudou nada em relação ao resultado e tratamento da requisição.
+
+h. Você considera o método `PUT` apropriado para esta transação? Por quê?
+R: Não, semanticamente, é adequado usar o método POST para criação de uma nova instância
+de entidade do banco, ou seja, um novo usuário, no PUT utilizariamos se caso quissesemos
+alterar um recurso especifico de um usuário, como por exemplo o seu email.
+
+
