@@ -17,7 +17,7 @@ class UserController {
 
   public async show(request: Request, response: Response, next: NextFunction): Promise<void>{
     try {
-      const { type, name } = request.params;
+      const { type, name } = request.query;
       
       if(type){
         const usersByType: User[] = data.users.filter((user: User) => {
@@ -32,6 +32,23 @@ class UserController {
   
         response.json(user).status(200);
       }
+      next();
+    } catch (error: any) {
+      response.json({message: error}).status(500);
+      next();
+    }
+  }
+
+  public async create(request: Request, response: Response, next: NextFunction): Promise<void>{
+    try {
+        const { idUser, name, email, type, ageUser} = request.body;
+        const id: number = Number(idUser);
+        const age: number = Number(ageUser);
+
+        const user: User = {id, name, email, type, age};
+        data.users.push(user);
+        response.json(user).status(201);
+      
       next();
     } catch (error: any) {
       response.json({message: error}).status(500);

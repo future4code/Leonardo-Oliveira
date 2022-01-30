@@ -4,8 +4,8 @@ import { userController } from "../controllers/user.controller";
 const router: Router = Router();
 
 
-router.get('/user', userController.index);
-router.get('/user/:type', userController.show);
-router.get('/user/:name', userController.show);
+router.get('/users', userController.index);
+router.get('/users/search', userController.show);
+router.post('/users', userController.create);
 
 export default router;
