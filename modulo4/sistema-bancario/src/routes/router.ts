@@ -7,5 +7,6 @@ const router: Router = Router();
 router.get('/users', userController.indexUsers);
 router.get('/users/balance', userController.showBalance);
 router.post('/users', userController.createUser);
+router.put('/users/balance', userController.addBalnce);
 
 export default router;
