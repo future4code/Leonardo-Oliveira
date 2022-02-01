@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import data from '../db/data.json';
-import { Client } from "../types/client";
+import { Client, Payment } from "../types/client";
 
 
 class UserController {
@@ -18,6 +18,8 @@ class UserController {
   public async showBalance(request: Request, response: Response, next: NextFunction): Promise<void>{
     try {
       const { cpf, name } = request.query;
+      console.log(cpf, name);
+
       
       if(cpf && name){
         const userBalnce: number | undefined = data.clients.find((clinet: Client) => {
@@ -93,6 +95,71 @@ class UserController {
       next();
     }
   }
+
+  public async payBill(request: Request, response: Response, next: NextFunction): Promise<void>{
+    try {
+        const { cpf } = request.params;
+
+          const client: Client | undefined =  data.clients.find((client :Client) => {
+            return client.cpf === cpf
+          })
+  
+          if(client){
+            const {value, description, payment_date_user} = request.body;
+            let payment_date: string = payment_date_user;
+            const date: Date = new Date();
+            const today: string = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
+            
+            const indexClient: number | undefined = data.clients.findIndex((clientValue: Client) => {
+              return clientValue === client;
+            })
+            
+            const clientBalance: number = client.balance;
+            
+            
+  
+            if(clientBalance >= Number(value)){
+              if(!payment_date){
+  
+                payment_date = today;
+              } 
+  
+              if(Date.parse(payment_date) >= Date.parse(today)){
+                const payment: Payment = {cpf, value, description, payment_date};
+
+                data.transactions.payment.push(payment);
+                const resultPaymentInfo: Payment = data.transactions.payment[data.transactions.payment.length - 1];
+
+                const newBalance: number = client.balance - Number(value);
+  
+  
+                client.balance = newBalance;
+      
+                data.clients[indexClient] = client;
+                response.status(200).json({client, resultPaymentInfo});
+                next();
+              }
+              else {
+                response.status(400).json({message: 'You need to have a valid date!'});
+                next();
+              }
+            } else {
+              response.status(400).json({message: 'You do not have enough money to do that!'});
+              next();
+            }
+
+          } else {
+            response.status(404).json({messsage: "Client NOT present in our data!"});
+            next();
+          }
+        
+    } catch (error: any) {
+      response.status(500).json({message: error});
+      next();
+    }
+  }
+
+
 
 }
 
