@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import data from '../db/data.json';
-import { Client, Payment } from "../types/client";
+import { Client, Payment, Transfer } from "../types/client";
 
 
 class UserController {
@@ -143,6 +143,56 @@ class UserController {
                 response.status(400).json({message: 'You need to have a valid date!'});
                 next();
               }
+            } else {
+              response.status(400).json({message: 'You do not have enough money to do that!'});
+              next();
+            }
+
+          } else {
+            response.status(404).json({messsage: "Client NOT present in our data!"});
+            next();
+          }
+        
+    } catch (error: any) {
+      response.status(500).json({message: error});
+      next();
+    }
+  }
+
+  public async transferMoney(request: Request, response: Response, next: NextFunction): Promise<void>{
+    try {
+        const {  cpf_owner, name_owner, name_recipient, cpf_recipient, amout } = request.params;
+
+          const client: Client | undefined =  data.clients.find((client :Client) => {
+            return client.cpf === cpf_owner
+          })
+  
+          if(client){
+            const value: number = Number(amout);
+            
+            const indexClient: number | undefined = data.clients.findIndex((clientValue: Client) => {
+              return clientValue === client;
+            })
+            
+            const clientBalance: number = client.balance;
+            
+  
+            if(clientBalance >= value){
+  
+                const transfer: Transfer = {cpf_owner, name_owner, cpf_recipient, name_recipient, value};
+
+                data.transactions.transfer.push(transfer);
+                const resultTransferInfo: Transfer = data.transactions.transfer[data.transactions.transfer.length - 1];
+
+                const newBalance: number = client.balance - Number(value);
+  
+  
+                client.balance = newBalance;
+      
+                data.clients[indexClient] = client;
+                response.status(200).json({client, resultTransferInfo});
+                next();
+              
             } else {
               response.status(400).json({message: 'You do not have enough money to do that!'});
               next();
