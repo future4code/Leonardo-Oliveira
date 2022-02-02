@@ -161,7 +161,7 @@ class UserController {
 
   public async transferMoney(request: Request, response: Response, next: NextFunction): Promise<void>{
     try {
-        const {  cpf_owner, name_owner, name_recipient, cpf_recipient, amout } = request.params;
+        const {  cpf_owner, name_owner, name_recipient, cpf_recipient, amout } = request.body;
 
           const client: Client | undefined =  data.clients.find((client :Client) => {
             return client.cpf === cpf_owner
