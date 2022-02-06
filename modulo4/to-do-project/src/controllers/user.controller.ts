@@ -4,18 +4,18 @@ import { User } from "../types/user.dto"
 import { v4 as uuidv4 } from 'uuid';
 
 
-export const postUser = async (req: Request, res: Response, next: NextFunction) => {
+export const postUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
 
   try {
   const {name, nickname, email} = req.body as User;
 
-  if(name && nickname && email){
+  if((name && nickname && email) && (name && nickname && email) !== ""){
     const id: string = uuidv4();
     const user: User = {id, name, email, nickname };
     await createUser(user);
     res.status(201).json(user);
   }else {
-    res.status(400).json({message: 'Some itens are not present!'});
+    res.status(400).json({message: 'Some data is not present!'});
   }
   next();
 }catch(e: any) {
