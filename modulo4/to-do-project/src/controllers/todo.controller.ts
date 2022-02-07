@@ -16,10 +16,10 @@ export const postTodo = async (req: Request, res: Response, next: NextFunction):
 
     limiteDate = limiteDate.split('/').reverse().join('-'); 
 
-    const newTodo: Todo = {id, title, description, limiteDate, createUserId};
+    const newTodo: Todo = {id, title, description, createUserId,limiteDate};
 
     await createTodo(newTodo);
-    res.status(201).json(newTodo);
+    res.status(201).json({message: 'Task created!', newTodo});
   } else {
     res.status(400).json({message:'Some data is not present!'});
   }
@@ -30,7 +30,7 @@ export const postTodo = async (req: Request, res: Response, next: NextFunction):
   }
 }
 
-export const getTodos = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+export const getTodos = async (_: Request, res: Response, next: NextFunction): Promise<void> => {
 try{
   const todos: Todo[] = await indexAllTodos();
   res.status(200).json(todos);

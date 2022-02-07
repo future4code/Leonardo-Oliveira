@@ -10,3 +10,19 @@ export const createUser = async (user: User) => {
   }
 }
 
+
+export const getUser = async (userId: string): Promise<User[]> => {
+  try {
+    return await connection('todo_user').where('id', userId);
+  } catch(e:any) {
+    throw new Error(e.message)
+  }
+}
+
+export const editUser = async (userId: string, fieldsUser: User) => {
+  try {
+    return await connection('todo_user').where('id', userId).update(fieldsUser);
+  } catch(e:any) {
+    throw new Error(e.message)
+  }
+}
