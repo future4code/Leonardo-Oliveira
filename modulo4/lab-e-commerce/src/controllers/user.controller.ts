@@ -38,21 +38,3 @@ export const getAllUsers = async (_: Request, res: Response, next: NextFunction)
   }
 }
 
-/* export const getOneUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-
-  try {
-  const { id } = req.params as User;
-
-  if(id && id !== ""){
-    const user: User[] = await getUser(id);
-    
-    res.status(201).json(user);
-  }else {
-    res.status(400).json({message: 'Some data is not present!'});
-  }
-  next();
-}catch(e: any) {
-    console.log(e.message)
-    res.status(500) && next(e.message)
-  }
-} */
