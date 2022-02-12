@@ -20,3 +20,10 @@ export const showUsers = async (): Promise<User[]> => {
   }
 }
 
+export const getOneUser = async (id: string): Promise<User | undefined> => {
+  try {
+    return await connection.raw(`SELECT * FROM ${tableName} WHERE id = ${id} LIMIT 1`)
+  } catch(e:any) {
+    throw new Error(e.message)
+  }
+}

@@ -18,3 +18,11 @@ export const showProducts = async (): Promise<Product[]> => {
     throw new Error(e.message)
   }
 }
+
+export const getOneProduct = async (id: string): Promise<Product | undefined> => {
+  try {
+    return await connection.raw(`SELECT * FROM ${tableName} WHERE id = ${id} LIMIT 1`)
+  } catch(e:any) {
+    throw new Error(e.message)
+  }
+}
