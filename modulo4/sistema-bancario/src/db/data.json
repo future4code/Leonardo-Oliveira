@@ -1,0 +1,37 @@
+{
+  "clients": [
+    {
+    "name":"Leonardo Oliveira",
+    "cpf":"033.377.932-07",
+    "birth_date":"1996-10-15",
+    "balance":3250.20
+    },
+    {
+      "name":"Andre Hoest",
+      "cpf":"152.887.902-10",
+      "birth_date":"1986-02-03",
+      "balance":8250.52
+      }
+  ],
+  "transactions":{
+    "payment":[
+      {
+        "cpf":"033.377.932-07",
+        "value":250.25, 
+        "description":"Pagamento da luz", 
+        "payment_date":"2022-01-20"
+      }
+    ],
+    "transfer":[
+    {
+      "cpf_owner":"033.377.932-07",
+      "name_owner":"Leonardo Oliveira",
+      "name_recipient":"André Hoest",
+      "cpf_recipient":"152.887.902-10",
+      "value":1250.30
+
+    }
+  ]
+
+  }
+}
